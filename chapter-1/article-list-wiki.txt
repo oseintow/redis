@@ -1,0 +1,38 @@
+SET article:12345:headline "Google Wants to TurnYour Clothes Into a Computer"
+
+SET article:10001:headline "For Millennials, the End of the TV Viewing Party"
+
+SET article:60056:headline  "Alicia Vikander, Who Portrayed Denmark's Queen, Is Screen Royalty"
+
+
+List (linked list)
+==================================
+LPUSH is used to insert data at the beginning of a list
+RPUSH is used to insert data at the end of the list
+
+LPUSH books "Clean Code"
+RPUSH books "Code Complete"
+LPUSH books "Peopleware"
+
+LLEN returns the length of the list
+
+LLEN books
+
+LINDEX return the element in a given index(indices are zero based)
+LINDEX books 1
+
+LRANGE returns an array with all the elements from a given index range
+LRANGE books 0 1
+LRANGE books 0 -1 // means return all
+
+LPOP removes and returns the first element of a list.
+RPOP removes and returns the last element of the list.
+
+LPOP books
+RPOP books
+LRANGE books 0 -1
+
+// Most efficient when you want to automatically remove items
+// from the list when empty and new ones come in
+BRPOP books 0 // zero means no timeout
+BLPOP books 0 // zero means no timeout

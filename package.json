@@ -1,0 +1,10 @@
+{
+  "name": "redis",
+  "version": "3.0.0",
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "redis": "^2.6.2"
+  }
+}

@@ -1,0 +1,42 @@
+SET philosopher "socrates"
+GET philosopher
+
+USE HELP <COMMAND> to get command info
+
+the KEYS command returns all stored keys that match a pattern
+eg. KEYS p*
+
+String Data Type
+=================================
+1. Cache Mechanism - set, get, mset and mget
+cache text and binary data. eg html pages, api response, images
+and videos.
+
+2. Cache with automatic expiration - SETEX, EXPIRE AND EXPIREAT.
+Used to cache data for a given period of time. Eg long running database queries
+
+3. Counting - INCR, INCRBY, DECR, DECRBY, INCLRFLOATBY.
+Used to implement string counters.
+
+$ MSET first "First Key Value" second "Second Key value"
+
+$ MGET first second
+
+Expire(in seconds) and TTL (in seconds)
+===================
+SET current_chapter "chapter 1"
+EXPIRE current_chapter 30
+GET current_chapter
+TTL current_chapter
+TTL current_chapter
+
+INCR and INCRBY
+========================
+SET counter 100
+INCR counter
+INCRBY counter 5
+DECR counter
+DECRBY counter 100
+GET counter
+INCRBYFLOAT counter 2.4
+INCRBYFLOAT counter -2.4
